@@ -1,0 +1,16 @@
+{
+  "default": [
+    {
+      "level": 1,
+      "name": "extraconstruct:apocalyptium"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "extraconstruct:apocalyptium"
+      }
+    ]
+  }
+}

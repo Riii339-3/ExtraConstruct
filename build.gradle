@@ -5,6 +5,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     // Adds the Kotlin Gradle plugin
     id 'org.jetbrains.kotlin.jvm' version '2.0.0'
+    id 'org.spongepowered.mixin' version '0.7.+'
     // OPTIONAL Kotlin Serialization plugin
     //id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
 }
@@ -97,6 +98,24 @@ repositories {
         url = 'https://thedarkcolour.github.io/KotlinForForge/'
         content { includeGroup "thedarkcolour" }
     }
+    maven {
+        url "https://cursemaven.com"
+    }
+    flatDir {
+        dir 'libs'
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository)
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
@@ -104,6 +123,21 @@ dependencies {
     minecraft "net.minecraftforge:forge:$minecraft_version-$forge_version"
 
     implementation "thedarkcolour:kotlinforforge:$kff_version"
+    implementation fg.deobf("curse.maven:moffs-addonapi-dynload-1242459:6420515")
+    implementation fg.deobf("curse.maven:tinkers-construct-74072:6777068")
+    implementation fg.deobf("curse.maven:mantle-74924:6819217")
+    implementation fg.deobf("blank:fantasy_ending-1.20.1:2.7.19c-all")
+    implementation fg.deobf("blank:EndingLibrary-1.20.1:1.3.2-all")
+    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:6970299")
+    implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
+    implementation fg.deobf("curse.maven:curios-309927:6418456")
+    implementation fg.deobf("curse.maven:geckolib-388172:7025129")
+    implementation fg.deobf("curse.maven:caelus-308989:5281700")
+    implementation fg.deobf("curse.maven:slashblade-resharped-1022428:7194599")
+    implementation fg.deobf("curse.maven:goety-revelation-1236817:6892481")
+    implementation fg.deobf("curse.maven:goety-586095:6778940")
+    implementation fg.deobf("maven.modrinth:eternisstarrysky:1.7")
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

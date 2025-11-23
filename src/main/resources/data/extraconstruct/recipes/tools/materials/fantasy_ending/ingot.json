@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/fantasy_ending"
+    },
+    {
+      "type": "addonapi:mods_available",
+      "required_raw_module": "extraconstruct:fantasy_ending"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/fantasy_ending"
+  },
+  "material": "extraconstruct:fantasy_ending",
+  "needed": 1,
+  "value": 1
+}

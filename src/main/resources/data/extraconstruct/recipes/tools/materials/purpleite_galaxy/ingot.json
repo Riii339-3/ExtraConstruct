@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/purpleite_galaxy"
+    },
+    {
+      "type": "addonapi:mods_available",
+      "required_raw_module": "extraconstruct:eternisstarrysky"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/purpleite_galaxy"
+  },
+  "material": "extraconstruct:purpleite_galaxy",
+  "needed": 1,
+  "value": 1
+}

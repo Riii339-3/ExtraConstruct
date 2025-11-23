@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/apocalyptium"
+    },
+    {
+      "type": "addonapi:mods_available",
+      "required_raw_module": "extraconstruct:revelationfix"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/apocalyptium"
+  },
+  "material": "extraconstruct:apocalyptium",
+  "needed": 1,
+  "value": 1
+}

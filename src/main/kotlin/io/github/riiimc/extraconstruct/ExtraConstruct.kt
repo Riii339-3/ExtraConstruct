@@ -1,6 +1,7 @@
-package example.examplemod
+package io.github.riiimc.extraconstruct
 
-import example.examplemod.block.ModBlocks
+import io.github.riiimc.extraconstruct.block.ModBlocks
+import io.github.riiimc.extraconstruct.utils.ExtraRegistries
 import net.minecraft.client.Minecraft
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
@@ -18,26 +19,32 @@ import thedarkcolour.kotlinforforge.forge.runForDist
  *
  * An example for blocks is in the `blocks` package of this mod.
  */
-@Mod(ExampleMod.ID)
-object ExampleMod {
-    const val ID = "examplemod"
+@Mod(ExtraConstruct.MODID)
+object ExtraConstruct {
+    const val MODID = "extraconstruct"
 
     // the logger for our mod
-    val LOGGER: Logger = LogManager.getLogger(ID)
+    val LOGGER: Logger = LogManager.getLogger(MODID)
 
     init {
         LOGGER.log(Level.INFO, "Hello world!")
 
         // Register the KDeferredRegister to the mod-specific event bus
         ModBlocks.REGISTRY.register(MOD_BUS)
+        ExtraRegistries.BLOCKS.register(MOD_BUS)
+        ExtraRegistries.ITEMS.register(MOD_BUS)
+        ExtraRegistries.MANTLE_ATTRIBUTE.register(MOD_BUS)
+        ExtraRegistries.MODIFIER.register(MOD_BUS)
+        ExtraRegistries.FLUIDS.register(MOD_BUS)
+        ExtraConfig.registerConfig();
 
         val obj = runForDist(
             clientTarget = {
-                MOD_BUS.addListener(::onClientSetup)
+                MOD_BUS.addListener(ExtraConstruct::onClientSetup)
                 Minecraft.getInstance()
             },
             serverTarget = {
-                MOD_BUS.addListener(::onServerSetup)
+                MOD_BUS.addListener(ExtraConstruct::onServerSetup)
                 "test"
             })
 

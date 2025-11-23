@@ -1,0 +1,10 @@
+{
+  "conditions": {
+    "type": "addonapi:mods_available",
+    "required_raw_module": "extraconstruct:revelationfix"
+  },
+  "craftable": false,
+  "hidden": false,
+  "sortOrder": 7,
+  "tier": 666
+}
